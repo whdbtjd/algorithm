@@ -1,4 +1,5 @@
-h,m = map(int,input().split())
+# divmod함수 쓰면 더 간단함
+(h,m) = map(int,input().split())
 
 total = 60 * h + m
 
