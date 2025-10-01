@@ -1,5 +1,4 @@
 s = input()
-S = list(s)
 
 i = int(input())
 
