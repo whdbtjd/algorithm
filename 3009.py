@@ -1,12 +1,7 @@
 ary = []
 
 x_ans = 0
-x_cnt = 0
-
 y_ans = 0
-y_cnt = 0
-
-ans = 0
 
 for i in range(3):
     x,y = map(int,input().split())
