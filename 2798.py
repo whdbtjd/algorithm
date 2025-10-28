@@ -1,3 +1,5 @@
+import bisect
+
 n,m = map(int,input().split())
 ary = []
 total_sum = set()
@@ -11,14 +13,8 @@ for i in range(n-2):
             total_sum.add(num)
 
 total_sum = list(total_sum)
+total_sum.sort()
 
-if m in total_sum:
-    print(m)
-else:
-    total_sum.append(m)
-    total_sum.sort()
-    print(total_sum[total_sum.index(m)-1])
-
-
-
+ans = bisect.bisect_right(total_sum,m) - 1
+print(total_sum[ans])
 
