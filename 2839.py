@@ -1,5 +1,8 @@
 n = int(input())
 
+x = 0
+y = 0
+
 ans = 0
 
 while True:
@@ -12,5 +15,7 @@ while True:
     else:
         ans += 1
         n -= 3
+
+
 
 print(ans)
