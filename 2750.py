@@ -1,0 +1,10 @@
+n = int(input())
+ary = []
+
+for _ in range(n):
+    ary.append(int(input()))
+
+ary.sort()
+
+for i in range(n):
+    print(ary[i])
