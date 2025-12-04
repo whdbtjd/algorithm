@@ -1,34 +1,30 @@
-import sys
-
-n = int(sys.stdin.readline())
-
-nums = []
-count = [0] * 8001
+n = int(input())
+num = []
 
 for _ in range(n):
-    x = int(sys.stdin.readline())
-    nums.append(x)
-    count[x + 4000] += 1
+    num.append(int(input()))
 
+print(round(sum(num)/n))
 
-print(round(sum(nums) / n))
+num.sort()
 
+print(num[n//2])
 
-nums.sort()
-print(nums[n // 2])
+cnt = [0] * 8001
 
+for i in range(n):
+    cnt[num[i] + 4000] += 1
 
-max_freq = max(count)
+cnt_max = max(cnt)
+cnt_max_ary = []
 
-modes = []
-for i in range(8001):
-    if count[i] == max_freq:
-        modes.append(i - 4000)
+for i in range(n):
+    if cnt_max == cnt[i]:
+        cnt_max_ary.append(i - 4000)
 
-if len(modes) > 1:
-    print(modes[1])
+if len(cnt_max_ary) > 1:
+    print(cnt_max_ary[1])
 else:
-    print(modes[0])
+    print(cnt_max_ary[0])
 
 
-print(nums[-1] - nums[0])
