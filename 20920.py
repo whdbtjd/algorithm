@@ -1,3 +1,5 @@
+import sys
+input = sys.stdin.readline
 n,m = map(int,input().split())
 
 word = {}
@@ -10,5 +12,5 @@ for _ in range(n):
 
 ans = sorted(word.items(), key = lambda x:(-x[1],-len(x[0]),x[0]))
 
-for i in word:
+for i,j in ans:
     print(i)
