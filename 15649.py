@@ -1,23 +1,21 @@
-N, M = map(int, input().split())
+n, m = map(int, input().split())
 
-arr = []              # 현재 수열
-visited = [False] * (N + 1)  # 숫자 사용 여부
+ary = [False] * (n + 1)
+ans = []
 
-def backtrack():
+def dfs():
 
-    if len(arr) == M:
-        print(*arr)
+    if len(ans) == m:
+        print(*ans)
         return
 
-    for i in range(1, N + 1):
-        if not visited[i]:
-            visited[i] = True
-            arr.append(i)
 
-            backtrack()
+    for i in range(1,n+1):
+        if not ary[i]:
+           ary[i] = True
+           ans.append(i)
+           dfs()
+           ans.pop()
+           ary[i] = False
 
-            # 되돌리기
-            arr.pop()
-            visited[i] = False
-
-backtrack()
+dfs()

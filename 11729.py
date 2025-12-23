@@ -1,15 +1,11 @@
-import sys
-input = sys.stdin.readline
-
 n = int(input())
 
-def hanoi(n, start, mid, end):
-    if n == 1:
-        print(start, end)
+def circle(n, start, end, middle):
+    if n == 0:
         return
-    hanoi(n-1, start, end, mid)
-    print(start, end)
-    hanoi(n-1, mid, start, end)
 
-print(2**n - 1)
-hanoi(n, 1, 2, 3)
+    circle(n-1, start, middle, end)
+    print(start, end)
+    circle(n-1, middle, end, start)
+
+circle(n, 1, 3, 2)
