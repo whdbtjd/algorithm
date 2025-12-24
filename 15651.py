@@ -1,14 +1,15 @@
 n,m = map(int,input().split())
+
 ans = []
 
-def dfs(start):
+def dfs():
     if len(ans) == m:
         print(*ans)
         return
 
-    for i in range(start,n+1):
+    for i in range(1,n+1):
         ans.append(i)
-        dfs(i + 1)
+        dfs()
         ans.pop()
 
-dfs(1)
+dfs()
